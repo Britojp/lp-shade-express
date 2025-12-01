@@ -196,6 +196,62 @@
  * need to be distinguished from eachother visually.
  */
 @layer utilities {
+  /* Decorative shapes */
+  .shape-dot-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+
+  .shape-accent-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, transparent 100%);
+    border-radius: 2px;
+  }
+
+  .shape-blob {
+    border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+    animation: blob-rotate 8s infinite;
+  }
+
+  @keyframes blob-rotate {
+    0%, 100% { border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%; }
+    25% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    75% { border-radius: 70% 30% 46% 54% / 30% 70% 54% 46%; }
+  }
+
+  .shape-gradient-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shape-gradient-line::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  }
+
+  /* Stagger animations for lists */
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+
+  /* Glow effect */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3), 0 0 40px rgba(255, 102, 0, 0.1);
+  }
+
+  .glow-primary-hover:hover {
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.4), 0 0 50px rgba(255, 102, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
