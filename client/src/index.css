@@ -253,6 +253,34 @@
     transition: box-shadow 0.3s ease;
   }
 
+  /* Professional divider */
+  .divider-premium {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(255, 102, 0), transparent);
+    margin: 3rem 0;
+  }
+
+  /* Premium spacing utilities */
+  .section-spacing {
+    padding: 5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-spacing {
+      padding: 3rem 0;
+    }
+  }
+
+  /* Typography enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+
+  .text-professional {
+    font-weight: 500;
+    letter-spacing: 0.025em;
+  }
+
   /* Hide ugly search cancel button in Chrome until we can style it properly */
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;
