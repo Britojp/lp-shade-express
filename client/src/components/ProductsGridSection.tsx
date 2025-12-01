@@ -4,7 +4,8 @@ import rollerBlindImg from "@assets/generated_images/roller_blind_product_shot.p
 import motorizedTrackImg from "@assets/generated_images/motorized_track_system.png";
 import livingRoomImg from "@assets/generated_images/hero_living_room_with_blinds.png";
 import officeImg from "@assets/generated_images/office_with_vertical_blinds.png";
-import lifestyleImg from "@assets/generated_images/lifestyle_bedroom_setup.png";
+import doubleVisionImg from "@assets/generated_images/double_vision_blinds_product.png";
+import romanBlindImg from "@assets/generated_images/roman_blinds_product_shot.png";
 
 const products = [
   {
@@ -16,13 +17,13 @@ const products = [
   {
     id: 2,
     title: "Double Vision",
-    image: motorizedTrackImg,
+    image: doubleVisionImg,
     href: "/produtos",
   },
   {
     id: 3,
     title: "Trilhos Motorizados",
-    image: livingRoomImg,
+    image: motorizedTrackImg,
     href: "/produtos",
   },
   {
@@ -34,7 +35,7 @@ const products = [
   {
     id: 5,
     title: "Cortinas Romanas",
-    image: lifestyleImg,
+    image: romanBlindImg,
     href: "/produtos",
   },
 ];
