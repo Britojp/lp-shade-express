@@ -46,6 +46,7 @@
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', Menlo, monospace;
+  --font-display: 'Montserrat', sans-serif;
   --radius: .5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
@@ -274,11 +275,24 @@
   /* Typography enhancements */
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
+    font-family: var(--font-display);
   }
 
   .text-professional {
     font-weight: 500;
     letter-spacing: 0.025em;
+  }
+
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .text-display-large {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
   }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */

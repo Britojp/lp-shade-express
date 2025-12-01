@@ -44,7 +44,7 @@ export default function MissionVisionValues() {
                 <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-xl font-black text-foreground mb-3 text-display">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">

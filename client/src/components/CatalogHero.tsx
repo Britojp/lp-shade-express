@@ -36,7 +36,7 @@ export default function CatalogHero() {
                 Material Completo
               </p>
               <div className="shape-accent-line mb-6" />
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight text-display-large">
                 Catálogo Shade Express
               </h1>
               <p className="text-lg text-white/80 leading-relaxed mb-8">

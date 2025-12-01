@@ -46,7 +46,7 @@ export default function DifferentialsSection() {
           <div className="flex justify-center mb-6">
             <div className="shape-accent-line" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground animate-slide-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground animate-slide-up text-display-large">
             Por que escolher a Shade Express?
           </h2>
         </div>

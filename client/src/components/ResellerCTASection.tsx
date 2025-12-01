@@ -22,7 +22,7 @@ export default function ResellerCTASection() {
               Para Revendas
             </p>
             <div className="shape-accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight text-display-large">
               Mais vendas, menos complicação
             </h2>
             <p className="text-lg text-white/80 mb-8 leading-relaxed">

@@ -20,7 +20,7 @@ export default function AboutSection() {
               Sobre a marca
             </p>
             <div className="shape-accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 leading-tight text-display-large">
               A praticidade que seu projeto precisa.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">

@@ -42,7 +42,7 @@ export default function BlogSection() {
               Blog
             </p>
             <div className="shape-accent-line mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-black text-foreground text-display-large">
               Tendências, dicas e novidades
             </h2>
           </div>

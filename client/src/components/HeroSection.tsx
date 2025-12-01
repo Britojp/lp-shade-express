@@ -24,7 +24,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-slide-up">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 animate-slide-up text-display-large">
             Transforme ambientes com{" "}
             <span className="text-primary">qualidade</span>, rapidez e preço
             acessível.

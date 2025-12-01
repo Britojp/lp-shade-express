@@ -82,7 +82,7 @@ export default function ResellerForm() {
           <div className="flex justify-center mb-6">
             <div className="shape-accent-line" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-black text-foreground text-display-large">
             Formulário de Cadastro
           </h2>
         </div>
