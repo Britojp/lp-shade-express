@@ -1,6 +1,4 @@
 import { Link } from "wouter";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import rollerBlindImg from "@assets/generated_images/roller_blind_product_shot.png";
 import motorizedTrackImg from "@assets/generated_images/motorized_track_system.png";
@@ -26,47 +24,44 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section className="py-20 md:py-28 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Categorias
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Soluções para todos os tipos de ambiente
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Descubra nossa linha completa de produtos desenvolvidos para
-            garantir praticidade, beleza e durabilidade.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {categories.map((category) => (
-            <Card
-              key={category.id}
-              className="group overflow-hidden hover-elevate"
-              data-testid={`category-card-${category.id}`}
-            >
-              <div className="aspect-[16/10] overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-                  {category.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {category.description}
-                </p>
-                <Link href={category.href}>
-                  <Button variant="outline" className="group/btn">
+            <Link key={category.id} href={category.href}>
+              <div
+                className="group relative overflow-hidden rounded-lg cursor-pointer"
+                data-testid={`category-card-${category.id}`}
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-white/80 mb-4">{category.description}</p>
+                  <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all">
                     Ver produtos
-                    <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
-                </Link>
+                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
               </div>
-            </Card>
+            </Link>
           ))}
         </div>
       </div>

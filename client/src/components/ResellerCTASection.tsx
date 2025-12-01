@@ -11,14 +11,17 @@ const benefits = [
 
 export default function ResellerCTASection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-primary">
+    <section className="py-20 md:py-28 bg-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+              Para Revendas
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Mais vendas, menos complicação
             </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8 leading-relaxed">
+            <p className="text-lg text-white/80 mb-8 leading-relaxed">
               Oferecemos mostruários, catálogo digital, atendimento exclusivo e
               treinamentos para fortalecer suas vendas e facilitar sua
               apresentação ao cliente final.
@@ -26,11 +29,10 @@ export default function ResellerCTASection() {
             <Link href="/revendas">
               <Button
                 size="lg"
-                variant="secondary"
-                className="text-base px-8 py-6"
+                className="text-base px-8 py-6 font-semibold"
                 data-testid="button-cta-reseller"
               >
-                Quero ser Revenda
+                Seja Revendedor
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -40,15 +42,13 @@ export default function ResellerCTASection() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-4 rounded-lg bg-white/10 backdrop-blur-sm"
+                className="flex items-center gap-4 p-5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                 data-testid={`reseller-benefit-${index}`}
               >
-                <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-primary-foreground font-medium">
-                  {benefit.text}
-                </span>
+                <span className="text-white font-medium">{benefit.text}</span>
               </div>
             ))}
           </div>

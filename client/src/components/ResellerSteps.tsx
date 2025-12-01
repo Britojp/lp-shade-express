@@ -29,15 +29,15 @@ const steps = [
 
 export default function ResellerSteps() {
   return (
-    <section className="py-16 md:py-24 bg-card">
+    <section className="py-20 md:py-28 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Passo a passo
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Como se tornar uma revenda
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Processo simples e rápido em 4 passos
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -48,13 +48,13 @@ export default function ResellerSteps() {
               data-testid={`reseller-step-${index}`}
             >
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-border" />
+                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-border" />
               )}
               <div className="relative z-10">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-primary text-white flex items-center justify-center text-3xl font-bold">
                   {item.step}
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">

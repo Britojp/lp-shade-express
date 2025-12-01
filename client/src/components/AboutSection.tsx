@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import officeImg from "@assets/generated_images/office_with_vertical_blinds.png";
 
 const highlights = [
   "Fabricação precisa",
@@ -9,11 +10,14 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-card">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+              Sobre a marca
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               A praticidade que seu projeto precisa.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -37,17 +41,16 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-muted">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-6xl md:text-7xl font-bold text-primary mb-2">
-                    10+
-                  </div>
-                  <p className="text-muted-foreground text-lg">
-                    Anos de experiência no mercado
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-[4/3] rounded-lg overflow-hidden">
+              <img
+                src={officeImg}
+                alt="Escritório moderno com persianas"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-lg hidden md:block">
+              <div className="text-4xl font-bold">10+</div>
+              <p className="text-sm text-white/90">Anos de experiência</p>
             </div>
           </div>
         </div>

@@ -1,8 +1,6 @@
-import { Link } from "wouter";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 interface ProductCardProps {
   id: number;
@@ -22,11 +20,11 @@ export default function ProductCard({
   category,
 }: ProductCardProps) {
   return (
-    <Card
-      className="overflow-hidden group hover-elevate"
+    <div
+      className="bg-white rounded-lg overflow-hidden group hover-elevate border border-border"
       data-testid={`product-card-${id}`}
     >
-      <div className="aspect-[4/3] overflow-hidden relative">
+      <div className="aspect-[4/3] overflow-hidden relative bg-muted">
         <img
           src={image}
           alt={name}
@@ -35,7 +33,7 @@ export default function ProductCard({
         <Badge className="absolute top-4 left-4">{category}</Badge>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-foreground mb-2">{name}</h3>
+        <h3 className="text-xl font-bold text-foreground mb-2">{name}</h3>
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
           {description}
         </p>
@@ -50,15 +48,10 @@ export default function ProductCard({
             </li>
           ))}
         </ul>
-        <div className="flex gap-3">
-          <Button className="flex-1" data-testid={`button-quote-${id}`}>
-            Solicitar Orçamento
-          </Button>
-          <Button variant="outline" size="icon" data-testid={`button-details-${id}`}>
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </div>
+        <Button className="w-full" data-testid={`button-quote-${id}`}>
+          Solicitar Orçamento
+        </Button>
       </div>
-    </Card>
+    </div>
   );
 }

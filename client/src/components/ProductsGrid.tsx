@@ -106,14 +106,13 @@ export default function ProductsGrid() {
       : products.filter((p) => p.category === activeCategory);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-10">
           {categories.map((category) => (
             <Button
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
-              size="sm"
               onClick={() => setActiveCategory(category)}
               data-testid={`filter-${category.toLowerCase()}`}
             >

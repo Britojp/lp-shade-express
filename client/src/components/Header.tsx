@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,13 +16,14 @@ export default function Header() {
   const [location] = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20 gap-4">
+        <div className="flex items-center justify-between h-20 gap-4">
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center">
-              <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
-                Shade<span className="text-foreground">Express</span>
+              <span className="text-2xl font-bold tracking-tight">
+                <span className="text-primary">SHADE</span>
+                <span className="text-foreground">EXPRESS</span>
               </span>
             </div>
           </Link>
@@ -30,17 +31,16 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <Button
-                  variant="ghost"
-                  className={`text-sm font-medium ${
+                <button
+                  className={`px-4 py-2 text-sm font-medium transition-colors ${
                     location === link.href
                       ? "text-primary"
-                      : "text-muted-foreground"
+                      : "text-foreground hover:text-primary"
                   }`}
                   data-testid={`nav-link-${link.label.toLowerCase()}`}
                 >
                   {link.label}
-                </Button>
+                </button>
               </Link>
             ))}
           </nav>
@@ -53,7 +53,7 @@ export default function Header() {
             </Link>
             <Link href="/revendas">
               <Button data-testid="button-become-reseller">
-                Quero ser Revenda
+                Seja Revendedor
               </Button>
             </Link>
           </div>
@@ -73,15 +73,15 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <div className="px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-white border-t border-border">
+          <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <button
-                  className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium hover-elevate ${
+                  className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium transition-colors ${
                     location === link.href
                       ? "bg-primary/10 text-primary"
-                      : "text-foreground"
+                      : "text-foreground hover:bg-muted"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                   data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
@@ -90,7 +90,7 @@ export default function Header() {
                 </button>
               </Link>
             ))}
-            <div className="pt-4 space-y-2 border-t border-border mt-2">
+            <div className="pt-4 space-y-2 border-t border-border mt-4">
               <Link href="/catalogo">
                 <Button
                   variant="outline"
@@ -105,7 +105,7 @@ export default function Header() {
                   className="w-full"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Quero ser Revenda
+                  Seja Revendedor
                 </Button>
               </Link>
             </div>

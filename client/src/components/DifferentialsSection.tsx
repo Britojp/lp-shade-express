@@ -1,5 +1,4 @@
 import { Zap, DollarSign, Award, Users, Shield } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 const differentials = [
   {
@@ -36,34 +35,34 @@ const differentials = [
 
 export default function DifferentialsSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-card">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Diferenciais
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             Por que escolher a Shade Express?
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Diferenciais que fazem a diferença no seu negócio
-          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {differentials.map((item, index) => (
-            <Card
+            <div
               key={index}
-              className="p-6 text-center hover-elevate"
+              className="text-center group"
               data-testid={`differential-card-${index}`}
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
-                <item.icon className="w-7 h-7 text-primary" />
+              <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center transition-colors group-hover:bg-primary">
+                <item.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-bold text-foreground mb-2">
                 {item.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
