@@ -1,0 +1,168 @@
+ESQUELETO PARA DESENVOLVIMENTO DO SITE OFICIAL SXP
+
+Alguns sites: https://www.trilhosuisso.com.br/ (ESSE SITE PRIORIDADE DE INSPIRAÇÃO MAS NAO PODE COPIAR)
+
+https://www.persolpersianas.com.br/
+ 1. HOME 
+H1 (Título Principal)
+Transforme ambientes com qualidade, rapidez e preço acessível.
+Subtítulo
+Cortinas e persianas modernas, produzidas com materiais duráveis e perfeitas para projetos residenciais e comerciais.
+CTA Principal
+Quero ser revenda
+CTA Secundário
+Conheça nossos produtos
+
+Seção: Sobre a marca
+Título
+A praticidade que seu projeto precisa.
+Texto Institucional
+A Shade Express oferece soluções modernas em cortinas e persianas para quem busca qualidade e agilidade. Com fabricação precisa, materiais selecionados e preços competitivos, somos a escolha ideal para revendas que desejam ampliar seu portfólio com produtos de alto giro.
+
+Seção: Categorias
+Título
+Soluções para todos os tipos de ambiente
+Categoria 1 CORTINAS E PERSIANAS:
+Cortinas e Persianas Rolo, Romana, Doublevision, Tripleshade, Celular.
+Toldos: Verticais
+Categoria 2 TRILHOS E ACESSÓRIOS:
+Trilhos Motorizados: Evolve, Somfy
+Trilho: acionamento com corda
+Varões: acionamento com corda
+Perfis e Acessórios
+
+Seção: Diferenciais
+Título
+Por que escolher a Shade Express?
+• Agilidade
+• Custo-benefício
+• Certificações
+• Suporte completo para revendas
+• Garantia 
+(criar um textinho para cada tópico)
+
+Seção: Para Revendas
+Título
+Mais vendas, menos complicação
+Texto
+Oferecemos mostruários, catálogo digital, atendimento exclusivo e treinamentos para fortalecer suas vendas e facilitar sua apresentação ao cliente final.
+CTA: Quero ser revenda
+
+Seção: Blog
+Título
+Tendências, dicas e novidades
+Cards com 3 posts recentes.
+
+Rodapé Resumido
+• Links principais
+• Contatos
+• Redes sociais
+• Copyright
+
+SEO HOME
+Título SEO: Cortinas e Persianas | Shade Express – Qualidade e Preço Acessível
+Meta Description: Cortinas e persianas modernas com qualidade, rapidez e preço acessível. Soluções perfeitas para arquitetos, lojas de decoração e revendas em todo o Brasil.
+Palavras-chave: cortinas, persianas, decoração, rolo, double vision, fornecedor de persianas, revenda de cortinas
+
+2. EMPRESA – TEXTO FINAL
+H1
+Quem somos
+Texto Principal
+A Shade Express nasceu com a missão de simplificar o acesso a cortinas e persianas de qualidade, oferecendo soluções modernas com preço competitivo e entrega rápida. Desenvolvida com o know-how técnico da Luxashade, unimos experiência, materiais de alto padrão e agilidade para atender revendas de todo o Brasil.
+
+Missão, Visão e Valores
+Missão
+Oferecer cortinas e persianas modernas e acessíveis, com agilidade e suporte completo.
+Visão
+Tornar-se referência nacional em proteção solar com foco em qualidade acessível.
+Valores
+Qualidade, transparência, agilidade, suporte e compromisso com resultados.
+
+Público-Alvo
+• Revendas
+• Arquitetos e designers
+• Lojas de decoração
+• Lojas de planejados
+• Home centers
+• Consumidores finais (via revendas)
+
+Diferenciais
+• Expertise técnica da Luxashade
+• Qualidade a preço competitivo
+• Suporte comercial
+• Mostruário profissional
+• Logística rápida
+
+SEO EMPRESA
+Título SEO: Shade Express | Sobre Nós – Qualidade e Acessibilidade
+Meta Description: Conheça a história, missão e valores da Shade Express. Cortinas e persianas modernas com preço acessível, qualidade garantida e suporte completo para revendas.
+Palavras-chave: fornecedor de cortinas, empresa de persianas, cortinas acessíveis, quem somos Shade Express
+
+3. PRODUTOS – TEXTO FINAL
+H1
+Produtos
+Texto Principal
+Descubra nossa linha completa de cortinas e persianas desenvolvidas para garantir praticidade, beleza e durabilidade para qualquer ambiente.
+
+Estrutura fixa para cada produto
+Nome do Produto
+Descrição
+Texto detalhado sobre funcionalidade, estilo e indicações.
+Principais Benefícios
+• Controle de luminosidade
+• Fácil manutenção
+• Alta durabilidade
+• Estética moderna
+• Preço acessível
+Especificações Técnicas
+• Materiais
+• Dimensões
+• Instalação
+• Acionamento
+• Cores
+• Garantia
+CTA
+Solicitar orçamento
+Falar com um consultor
+
+SEO PRODUTOS
+Título SEO: Cortinas e Persianas Shade Express – Linha Completa
+Meta Description: Conheça a linha completa de persianas e cortinas da Shade Express. Produtos modernos, acessíveis e perfeitos para revendas e projetos profissionais.
+Palavras-chave: persianas rolo, persianas double vision, cortinas blackout, fornecedor de persianas
+
+4. CATÁLOGO – TEXTO FINAL
+H1
+Catálogo Shade Express
+Texto Principal
+Baixe nosso catálogo digital e conheça todos os modelos, acabamentos e especificações técnicas da Shade Express. Ideal para revendas, arquitetos e profissionais da área.
+CTA: Baixar catálogo
+CTA secundário: Solicitar mostruário
+
+SEO CATÁLOGO
+Título SEO: Catálogo Shade Express – Baixe Agora
+Meta Description: Baixe o catálogo completo da Shade Express. Cortinas e persianas modernas, com especificações técnicas e acabamentos detalhados.
+Palavras-chave: catálogo de persianas, catálogo de cortinas, mostruário de persianas
+
+5. REVENDAS – TEXTO FINAL
+H1
+Seja uma Revenda Shade Express
+Texto Principal
+A Shade Express oferece suporte completo para revendas que desejam ampliar o portfólio com produtos modernos e acessíveis. Nosso compromisso é entregar agilidade, qualidade e materiais profissionais para impulsionar suas vendas.
+
+Benefícios
+• Margens competitivas
+• Mostruário exclusivo
+• Catálogo digital
+• Suporte técnico
+• Atendimento rápido
+Passo a passo
+    1. Preencha o formulário
+    2. Nossa equipe entra em contato
+    3. Receba o mostruário
+    4. Comece a vender
+CTA principal: Quero ser revenda
+
+SEO REVENDAS
+Título SEO: Seja Revenda Shade Express – Produtos de Alto Giro
+Meta Description: Cadastre-se como revenda da Shade Express e receba suporte completo, mostruário, catálogo digital e atendimento exclusivo.
+Palavras-chave: fornecedor para revendas, como ser revenda de persianas, fornecedor de cortinas
