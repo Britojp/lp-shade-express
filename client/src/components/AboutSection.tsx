@@ -45,17 +45,27 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="relative animate-scale-in">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-lg blur-2xl" />
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+            <div className="absolute -inset-6 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl" />
+            
+            {/* Decorative shapes around image */}
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 shape-blob rounded-3xl" />
+            <div className="absolute -bottom-4 -left-4 w-20 h-20 border-2 border-primary/20 rounded-full" />
+            <div className="absolute top-1/2 -right-12 w-32 h-1 bg-gradient-to-r from-primary/40 to-transparent" />
+            
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
               <img
                 src={officeImg}
                 alt="Escritório moderno com persianas"
                 className="w-full h-full object-cover"
               />
+              {/* Overlay accent */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-lg hidden md:block glow-primary animate-float">
+
+            <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-lg hidden md:block glow-primary animate-float">
               <div className="text-4xl font-bold">10+</div>
               <p className="text-sm text-white/90">Anos de experiência</p>
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-white/20 rounded-full" />
             </div>
           </div>
         </div>

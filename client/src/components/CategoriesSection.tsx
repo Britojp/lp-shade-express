@@ -44,10 +44,15 @@ export default function CategoriesSection() {
           {categories.map((category, idx) => (
             <Link key={category.id} href={category.href}>
               <div
-                className="group relative overflow-hidden rounded-lg cursor-pointer animate-scale-in"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer animate-scale-in"
                 style={{ animationDelay: `${idx * 0.2}s` }}
                 data-testid={`category-card-${category.id}`}
               >
+                {/* Decorative elements */}
+                <div className="absolute top-6 left-6 w-32 h-32 bg-white/5 shape-blob pointer-events-none z-10 group-hover:bg-white/10 transition-all" />
+                <div className="absolute bottom-6 right-6 w-24 h-24 border-2 border-white/10 rounded-full pointer-events-none z-10 group-hover:border-white/20 transition-all" />
+                <div className="absolute top-1/3 -right-16 w-40 h-1 bg-gradient-to-l from-white/30 to-transparent rotate-45 pointer-events-none z-10" />
+
                 <div className="aspect-[16/10] overflow-hidden relative">
                   <img
                     src={category.image}
@@ -55,8 +60,7 @@ export default function CategoriesSection() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 shape-blob pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-primary/10 group-hover:to-primary/20 transition-all" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -69,6 +73,10 @@ export default function CategoriesSection() {
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
+
+                {/* Corner accents */}
+                <div className="absolute top-0 left-0 w-12 h-12 border-l-2 border-t-2 border-white/30 pointer-events-none z-20" />
+                <div className="absolute bottom-0 right-0 w-12 h-12 border-r-2 border-b-2 border-white/30 pointer-events-none z-20" />
               </div>
             </Link>
           ))}

@@ -20,8 +20,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold tracking-tight">
+            <div className="flex items-center relative">
+              <div className="absolute -inset-2 bg-primary/5 rounded-lg" />
+              <span className="text-2xl font-bold tracking-tight relative z-10">
                 <span className="text-primary">SHADE</span>
                 <span className="text-foreground">EXPRESS</span>
               </span>
@@ -32,7 +33,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <button
-                  className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 text-sm font-medium transition-all relative ${
                     location === link.href
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
@@ -40,6 +41,9 @@ export default function Header() {
                   data-testid={`nav-link-${link.label.toLowerCase()}`}
                 >
                   {link.label}
+                  {location === link.href && (
+                    <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-primary/0 via-primary to-primary/0" />
+                  )}
                 </button>
               </Link>
             ))}
@@ -73,7 +77,7 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-border">
+        <div className="lg:hidden bg-white border-t border-border animate-slide-down">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
