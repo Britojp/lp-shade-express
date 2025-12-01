@@ -32,53 +32,45 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <section className="py-20 md:py-28 bg-muted/50 relative overflow-hidden">
-      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-primary/5 shape-blob pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 animate-slide-down">
+    <section className="py-20 md:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12">
           <div>
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            <p className="text-primary font-bold text-sm uppercase tracking-widest mb-2">
               Blog
             </p>
-            <div className="shape-accent-line mb-4" />
-            <h2 className="text-3xl md:text-4xl font-black text-foreground text-display-large">
-              Tendências, dicas e novidades
+            <h2 className="text-3xl md:text-4xl font-black text-display-large text-foreground">
+              Últimas notícias
             </h2>
           </div>
-          <Button variant="outline" className="self-start sm:self-auto">
-            Ver todos os posts
+          <Button variant="outline">
+            Ver mais
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, idx) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-lg overflow-hidden group hover-elevate hover:scale-105 transition-transform animate-slide-up"
-              style={{ animationDelay: `${idx * 0.15}s` }}
+              className="bg-white rounded-lg overflow-hidden group hover:shadow-lg transition-shadow"
               data-testid={`blog-card-${post.id}`}
             >
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded animate-pulse">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-muted-foreground flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {post.date}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+              <div className="aspect-[16/9] bg-muted"></div>
+              <div className="p-4">
+                <p className="text-xs text-primary font-bold uppercase tracking-widest mb-2">
+                  {post.category}
+                </p>
+                <h3 className="text-base font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  {post.excerpt}
+                <p className="text-xs text-muted-foreground flex items-center gap-1 mb-3">
+                  <Calendar className="w-3 h-3" />
+                  {post.date}
                 </p>
+                <a href="#" className="text-sm text-primary font-bold hover:text-foreground transition-colors">
+                  Ler mais →
+                </a>
               </div>
             </article>
           ))}

@@ -24,18 +24,13 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <section className="py-20 md:py-28 bg-muted/50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 shape-blob opacity-40 pointer-events-none hidden lg:block" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 md:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 animate-fade-in">
+          <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
             Categorias
           </p>
-          <div className="flex justify-center mb-6">
-            <div className="shape-accent-line" />
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4 animate-slide-up text-display-large">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-display-large text-foreground mb-4">
             Soluções para todos os tipos de ambiente
           </h2>
         </div>
@@ -44,39 +39,28 @@ export default function CategoriesSection() {
           {categories.map((category, idx) => (
             <Link key={category.id} href={category.href}>
               <div
-                className="group relative overflow-hidden rounded-2xl cursor-pointer animate-scale-in"
-                style={{ animationDelay: `${idx * 0.2}s` }}
+                className="group relative overflow-hidden rounded-lg cursor-pointer"
                 data-testid={`category-card-${category.id}`}
               >
-                {/* Decorative elements */}
-                <div className="absolute top-6 left-6 w-32 h-32 bg-white/5 shape-blob pointer-events-none z-10 group-hover:bg-white/10 transition-all" />
-                <div className="absolute bottom-6 right-6 w-24 h-24 border-2 border-white/10 rounded-full pointer-events-none z-10 group-hover:border-white/20 transition-all" />
-                <div className="absolute top-1/3 -right-16 w-40 h-1 bg-gradient-to-l from-white/30 to-transparent rotate-45 pointer-events-none z-10" />
-
                 <div className="aspect-[16/10] overflow-hidden relative">
                   <img
                     src={category.image}
                     alt={category.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-primary/10 group-hover:to-primary/20 transition-all" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 transition-transform group-hover:-translate-y-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                     {category.title}
                   </h3>
                   <p className="text-white/80 mb-4">{category.description}</p>
-                  <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all">
+                  <div className="flex items-center text-primary font-bold text-sm">
                     Ver produtos
-                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </div>
                 </div>
-
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-12 h-12 border-l-2 border-t-2 border-white/30 pointer-events-none z-20" />
-                <div className="absolute bottom-0 right-0 w-12 h-12 border-r-2 border-b-2 border-white/30 pointer-events-none z-20" />
               </div>
             </Link>
           ))}

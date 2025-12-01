@@ -10,62 +10,42 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 shape-blob pointer-events-none hidden md:block" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 md:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="animate-slide-right">
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
-              Sobre a marca
+          <div>
+            <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
+              Sobre nós
             </p>
-            <div className="shape-accent-line mb-6" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6 leading-tight text-display-large">
-              A praticidade que seu projeto precisa.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-display-large text-foreground mb-6 leading-tight">
+              Qualidade e agilidade para seu projeto.
             </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              A Shade Express oferece cortinas e persianas modernas com fabricação precisa, materiais selecionados e preços competitivos.
+            </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              A Shade Express oferece soluções modernas em cortinas e persianas
-              para quem busca qualidade e agilidade. Com fabricação precisa,
-              materiais selecionados e preços competitivos, somos a escolha
-              ideal para revendas que desejam ampliar seu portfólio com produtos
-              de alto giro.
+              Somos a escolha ideal para revendas que desejam ampliar seu portfólio com produtos de alto giro.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="flex items-center gap-3"
                   data-testid={`highlight-${index}`}
                 >
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
+                  <span className="text-foreground font-medium text-sm">{item}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative animate-scale-in">
-            <div className="absolute -inset-6 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl" />
-            
-            {/* Decorative shapes around image */}
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 shape-blob rounded-3xl" />
-            <div className="absolute -bottom-4 -left-4 w-20 h-20 border-2 border-primary/20 rounded-full" />
-            <div className="absolute top-1/2 -right-12 w-32 h-1 bg-gradient-to-r from-primary/40 to-transparent" />
-            
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+          <div className="relative hidden lg:block">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
               <img
                 src={officeImg}
                 alt="Escritório moderno com persianas"
                 className="w-full h-full object-cover"
               />
-              {/* Overlay accent */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
-            </div>
-
-            <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-lg hidden md:block glow-primary animate-float">
-              <div className="text-4xl font-bold">10+</div>
-              <p className="text-sm text-white/90">Anos de experiência</p>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-white/20 rounded-full" />
             </div>
           </div>
         </div>
