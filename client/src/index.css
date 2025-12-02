@@ -47,6 +47,7 @@
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', Menlo, monospace;
   --font-display: 'Montserrat', sans-serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
   --radius: .5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
@@ -297,6 +298,26 @@
     font-family: var(--font-display);
     font-weight: 800;
     letter-spacing: -0.03em;
+  }
+
+  /* Accent/Highlight Font - Playfair Display for elegant emphasis */
+  .text-accent-font {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .text-accent-font-lg {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
+  }
+
+  .text-accent-font-sm {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
