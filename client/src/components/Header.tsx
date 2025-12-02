@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -13,18 +13,36 @@ const navLinks = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-primary shadow-lg" 
+        : "bg-transparent"
+    } backdrop-blur-md ${isScrolled ? "" : "border-b border-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center relative">
-              <div className="absolute -inset-2 bg-primary/5 rounded-lg" />
-              <span className="text-2xl font-bold tracking-tight relative z-10">
-                <span className="text-primary">SHADE</span>
-                <span className="text-foreground">EXPRESS</span>
+              <div className={`absolute -inset-2 rounded-lg transition-colors ${
+                isScrolled ? "bg-white/10" : "bg-primary/5"
+              }`} />
+              <span className={`text-2xl font-bold tracking-tight relative z-10 transition-colors ${
+                isScrolled ? "text-white" : "text-foreground"
+              }`}>
+                <span className={isScrolled ? "text-white" : "text-primary"}>SHADE</span>
+                <span>{isScrolled ? "EXPRESS" : ""}</span>
               </span>
             </div>
           </Link>
@@ -34,7 +52,11 @@ export default function Header() {
               <Link key={link.href} href={link.href}>
                 <button
                   className={`px-4 py-2 text-sm font-medium transition-all relative ${
-                    location === link.href
+                    isScrolled
+                      ? location === link.href
+                        ? "text-white"
+                        : "text-white/80 hover:text-white"
+                      : location === link.href
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -42,7 +64,11 @@ export default function Header() {
                 >
                   {link.label}
                   {location === link.href && (
-                    <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-primary/0 via-primary to-primary/0" />
+                    <div className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r ${
+                      isScrolled
+                        ? "from-white/0 via-white to-white/0"
+                        : "from-primary/0 via-primary to-primary/0"
+                    }`} />
                   )}
                 </button>
               </Link>
@@ -51,19 +77,28 @@ export default function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <Link href="/catalogo">
-              <Button variant="outline" data-testid="button-download-catalog">
+              <Button 
+                variant={isScrolled ? "outline" : "outline"} 
+                className={isScrolled ? "border-white text-white hover:bg-white/10" : ""}
+                data-testid="button-download-catalog"
+              >
                 Baixar Catálogo
               </Button>
             </Link>
             <Link href="/revendas">
-              <Button data-testid="button-become-reseller">
+              <Button 
+                className={isScrolled ? "bg-white text-primary hover:bg-white/90" : ""}
+                data-testid="button-become-reseller"
+              >
                 Seja Revendedor
               </Button>
             </Link>
           </div>
 
           <button
-            className="lg:hidden p-2 rounded-md hover-elevate"
+            className={`lg:hidden p-2 rounded-md hover-elevate transition-colors ${
+              isScrolled ? "text-white" : "text-foreground"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="button-mobile-menu"
           >
@@ -77,13 +112,19 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-border animate-slide-down">
+        <div className={`lg:hidden animate-slide-down ${
+          isScrolled ? "bg-primary" : "bg-white"
+        } ${isScrolled ? "border-t border-white/10" : "border-t border-border"}`}>
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <button
                   className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium transition-colors ${
-                    location === link.href
+                    isScrolled
+                      ? location === link.href
+                        ? "bg-white/20 text-white"
+                        : "text-white/80 hover:bg-white/10"
+                      : location === link.href
                       ? "bg-primary/10 text-primary"
                       : "text-foreground hover:bg-muted"
                   }`}
@@ -94,7 +135,9 @@ export default function Header() {
                 </button>
               </Link>
             ))}
-            <div className="pt-4 space-y-2 border-t border-border mt-4">
+            <div className={`pt-4 space-y-2 ${
+              isScrolled ? "border-t border-white/10" : "border-t border-border"
+            } mt-4`}>
               <Link href="/catalogo">
                 <Button
                   variant="outline"
