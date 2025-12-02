@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MapPin, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -16,7 +16,23 @@ export default function Header() {
   const [location] = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
+    <>
+      {/* Info Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-white py-2.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm md:text-base font-medium">
+            <MapPin className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+            <span>Atendimento em todo Brasil - Qualidade garantida</span>
+          </div>
+          <a href="tel:+551133334444" className="flex items-center gap-2 text-sm md:text-base font-medium hover:text-white/80 transition-colors" data-testid="header-phone">
+            <Phone className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+            <span className="hidden sm:inline">(11) 3333-4444</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <header className="fixed top-10 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
           <Link href="/" className="flex items-center gap-2">
@@ -117,5 +133,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
