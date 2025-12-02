@@ -31,7 +31,7 @@ function App() {
       <TooltipProvider>
         <div className="flex flex-col min-h-screen bg-background">
           <Header />
-          <main className="flex-1 pt-40">
+          <main className="flex-1 pt-32">
             <Router />
           </main>
           <Footer />
