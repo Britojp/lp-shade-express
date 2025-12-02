@@ -22,8 +22,11 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-foreground text-white relative overflow-hidden">
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 shape-blob pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-primary/5 shape-blob pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="py-16 md:py-20 border-b border-white/10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="col-span-2 md:col-span-1">
