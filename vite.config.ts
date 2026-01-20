@@ -2,12 +2,21 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/lp-shade-express/" : "/",
   plugins: [
     react(),
     runtimeErrorOverlay(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "404.html",
+          dest: ".",
+        },
+      ],
+    }),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
