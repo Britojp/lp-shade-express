@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import CompanyHero from "@/components/CompanyHero";
 import MissionVisionValues from "@/components/MissionVisionValues";
 import TargetAudience from "@/components/TargetAudience";
@@ -9,7 +8,6 @@ import Footer from "@/components/Footer";
 export default function Empresa() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main>
         <CompanyHero />
         <MissionVisionValues />

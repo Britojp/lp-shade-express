@@ -23,38 +23,44 @@ const items = [
 
 export default function MissionVisionValues() {
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 shape-blob pointer-events-none" />
-      <div className="absolute -bottom-20 -left-40 w-72 h-72 bg-primary/5 shape-blob pointer-events-none" />
+    <section className="py-20 md:py-28 bg-gray-50 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgb(0, 0, 0) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(0, 0, 0) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {items.map((item, index) => (
             <div
               key={index}
-              className="relative text-center p-8 rounded-2xl bg-gradient-to-br from-white to-muted/30 hover-elevate transition-all border border-border hover:border-primary/30 group animate-slide-up"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="relative bg-white border border-gray-100 rounded-lg p-6 lg:p-8 transition-all duration-300 hover:shadow-xl group"
               data-testid={`mvv-card-${index}`}
             >
-              {/* Decorative blob inside card */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-primary/5 shape-blob pointer-events-none group-hover:bg-primary/10 transition-all" />
-              <div className="absolute bottom-4 left-4 w-12 h-12 border border-primary/20 rounded-full pointer-events-none group-hover:border-primary/40 transition-all" />
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-lg" />
 
-              <div className="relative z-10">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <item.icon className="w-8 h-8 text-white" />
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <item.icon className="w-6 h-6 lg:w-7 lg:h-7 text-primary" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-black text-foreground mb-3 text-display">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
 
-              {/* Corner accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-primary/20 group-hover:border-primary/40 rounded-tl-lg transition-all" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-primary/20 group-hover:border-primary/40 rounded-br-lg transition-all" />
+                <div className="flex-1 text-left">
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed" style={{ lineHeight: '1.75' }}>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

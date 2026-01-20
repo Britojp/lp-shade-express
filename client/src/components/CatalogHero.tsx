@@ -24,7 +24,7 @@ export default function CatalogHero() {
   };
 
   return (
-    <section className="pt-20">
+    <section className="pt-[110px] sm:pt-[115px] md:pt-[125px] lg:pt-[125px]">
       <div className="bg-foreground py-20 md:py-28 relative overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 shape-blob pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 shape-blob pointer-events-none" />

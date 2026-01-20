@@ -35,7 +35,10 @@ export default function CategoriesSection() {
           <div className="flex justify-center mb-6">
             <div className="shape-accent-line" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-slide-up text-accent-font-lg">
+          <h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-slide-up" 
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
             Soluções para todos os tipos de ambiente
           </h2>
         </div>

@@ -35,6 +35,9 @@ export default function ResellerSteps() {
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Passo a passo
           </p>
+          <div className="flex justify-center mb-6">
+            <div className="shape-accent-line" />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Como se tornar uma revenda
           </h2>

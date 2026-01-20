@@ -8,10 +8,19 @@ export default function ProductSpecs() {
     <section className="py-16 md:py-24 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <p className="text-[#F68D2E] font-semibold text-sm uppercase tracking-wider mb-3">
+            Especificações
+          </p>
+          <div className="flex justify-center mb-6">
+            <div className="shape-accent-line" />
+          </div>
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
             Especificações Técnicas
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-gray-600">
             Todos os nossos produtos seguem rigorosos padrões de qualidade
           </p>
         </div>

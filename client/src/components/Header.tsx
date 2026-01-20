@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, MapPin, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -25,40 +25,35 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <>
-      {/* Info Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-white py-2.5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm md:text-base font-medium">
-            <MapPin className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-            <span>Atendimento em todo Brasil - Qualidade garantida</span>
-          </div>
-          <a href="tel:+551133334444" className="flex items-center gap-2 text-sm md:text-base font-medium hover:text-white/80 transition-colors" data-testid="header-phone">
-            <Phone className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-            <span className="hidden sm:inline">(11) 3333-4444</span>
-          </a>
-        </div>
-      </div>
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
-      {/* Main Header */}
-      <header className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
+  const headerHeight = '64px';
+  const headerHeightDesktop = '80px';
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-primary shadow-lg" 
-          : "bg-transparent"
-      } backdrop-blur-md`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
-          <Link href="/" className="flex items-center gap-2">
+          ? "bg-white shadow-lg" 
+          : "bg-white/95 backdrop-blur-md"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 gap-2 sm:gap-4">
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <div className="flex items-center relative">
-              <div className={`absolute -inset-2 rounded-lg transition-colors ${
-                isScrolled ? "bg-white/10" : "bg-primary/5"
-              }`} />
-              <span className={`text-2xl font-bold tracking-tight relative z-10 transition-colors ${
-                isScrolled ? "text-white" : "text-foreground"
-              }`}>
-                <span className={isScrolled ? "text-white" : "text-primary"}>SHADE</span>
-                <span>{isScrolled ? "EXPRESS" : ""}</span>
+              <span className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight relative z-10 text-gray-900" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <span className="text-[#F68D2E]">SHADE</span>
+                <span className="text-gray-900 hidden sm:inline"> EXPRESS</span>
               </span>
             </div>
           </Link>
@@ -67,56 +62,49 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <button
-                  className={`px-4 py-2 text-sm font-medium transition-all relative ${
-                    isScrolled
-                      ? location === link.href
-                        ? "text-white"
-                        : "text-white/80 hover:text-white"
-                      : location === link.href
-                      ? "text-primary"
-                      : "text-foreground hover:text-primary"
+                  className={`px-3 xl:px-4 py-2 text-sm font-medium transition-all relative ${
+                    location === link.href
+                      ? "text-[#F68D2E]"
+                      : "text-gray-700 hover:text-[#F68D2E]"
                   }`}
                   data-testid={`nav-link-${link.label.toLowerCase()}`}
                 >
                   {link.label}
                   {location === link.href && (
-                    <div className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r ${
-                      isScrolled
-                        ? "from-white/0 via-white to-white/0"
-                        : "from-primary/0 via-primary to-primary/0"
-                    }`} />
+                    <div className="absolute bottom-0 left-3 xl:left-4 right-3 xl:right-4 h-0.5 bg-gradient-to-r from-[#F68D2E]/0 via-[#F68D2E] to-[#F68D2E]/0" />
                   )}
                 </button>
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 lg:gap-3">
             <Link href="/catalogo">
               <Button 
-                variant={isScrolled ? "outline" : "outline"} 
-                className={isScrolled ? "border-white text-white hover:bg-white/10" : ""}
+                variant="outline" 
+                className="border-[#F68D2E] text-[#F68D2E] hover:bg-[#F68D2E]/5 text-xs sm:text-sm px-3 lg:px-4 py-1.5 lg:py-2"
                 data-testid="button-download-catalog"
               >
-                Baixar Catálogo
+                <span className="hidden lg:inline">Baixar Catálogo</span>
+                <span className="lg:hidden">Catálogo</span>
               </Button>
             </Link>
             <Link href="/revendas">
               <Button 
-                className={isScrolled ? "bg-white text-primary hover:bg-white/90" : ""}
+                className="bg-[#F68D2E] hover:bg-[#E87D1E] text-white text-xs sm:text-sm px-3 lg:px-4 py-1.5 lg:py-2"
                 data-testid="button-become-reseller"
               >
-                Seja Revendedor
+                <span className="hidden lg:inline">Seja Revendedor</span>
+                <span className="lg:hidden">Revenda</span>
               </Button>
             </Link>
           </div>
 
           <button
-            className={`lg:hidden p-2 rounded-md hover-elevate transition-colors ${
-              isScrolled ? "text-white" : "text-foreground"
-            }`}
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 flex-shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="button-mobile-menu"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -128,54 +116,58 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className={`lg:hidden animate-slide-down ${
-          isScrolled ? "bg-primary" : "bg-white"
-        } ${isScrolled ? "border-t border-white/10" : "border-t border-border"}`}>
-          <div className="px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <button
-                  className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium transition-colors ${
-                    isScrolled
-                      ? location === link.href
-                        ? "bg-white/20 text-white"
-                        : "text-white/80 hover:bg-white/10"
-                      : location === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
-                >
-                  {link.label}
-                </button>
-              </Link>
-            ))}
-            <div className={`pt-4 space-y-2 ${
-              isScrolled ? "border-t border-white/10" : "border-t border-border"
-            } mt-4`}>
-              <Link href="/catalogo">
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Baixar Catálogo
-                </Button>
-              </Link>
-              <Link href="/revendas">
-                <Button
-                  className="w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Seja Revendedor
-                </Button>
-              </Link>
+        <>
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ top: headerHeight }}
+          />
+          <div 
+            className="fixed left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 animate-slide-down overflow-y-auto"
+            style={{ 
+              top: headerHeight,
+              maxHeight: `calc(100vh - ${headerHeight})`
+            }}
+          >
+            <div className="px-4 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <button
+                    className={`block w-full text-left px-4 py-3 rounded-md text-base font-medium transition-colors ${
+                      location === link.href
+                        ? "bg-[#F68D2E]/10 text-[#F68D2E]"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </button>
+                </Link>
+              ))}
+              <div className="pt-4 space-y-2 border-t border-gray-200 mt-4">
+                <Link href="/catalogo">
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Baixar Catálogo
+                  </Button>
+                </Link>
+                <Link href="/revendas">
+                  <Button
+                    className="w-full bg-[#F68D2E] hover:bg-[#E87D1E] text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Seja Revendedor
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
-    </>
   );
 }

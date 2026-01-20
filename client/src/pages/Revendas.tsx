@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import ResellerHero from "@/components/ResellerHero";
 import ResellerBenefits from "@/components/ResellerBenefits";
 import ResellerSteps from "@/components/ResellerSteps";
@@ -8,7 +7,6 @@ import Footer from "@/components/Footer";
 export default function Revendas() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main>
         <ResellerHero />
         <ResellerBenefits />

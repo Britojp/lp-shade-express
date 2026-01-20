@@ -1,87 +1,142 @@
-import { Link } from "wouter";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+import rollerBlindImg from "@assets/generated_images/roller_blind_product_shot.png";
+import doubleVisionImg from "@assets/generated_images/double_vision_blinds_product.png";
+import officeImg from "@assets/generated_images/office_with_vertical_blinds.png";
 
-// todo: remove mock functionality - replace with real blog data
 const blogPosts = [
   {
     id: 1,
-    title: "Tendências de decoração 2024: Como escolher persianas modernas",
-    excerpt:
-      "Descubra as principais tendências de persianas e cortinas para transformar seus ambientes neste ano.",
-    date: "15 Nov 2024",
-    category: "Tendências",
+    title: "Como escolher a cortina ideal",
+    category: "Dicas",
+    date: "12 Out, 2023",
+    excerpt: "Guia completo com dicas práticas para escolher a cortina perfeita para cada ambiente da sua casa ou escritório.",
+    image: rollerBlindImg,
   },
   {
     id: 2,
-    title: "Guia completo: Double Vision vs Rolo - Qual escolher?",
-    excerpt:
-      "Compare as características, benefícios e indicações de cada modelo para fazer a melhor escolha.",
-    date: "10 Nov 2024",
-    category: "Dicas",
+    title: "Tendências de decoração 2024",
+    category: "Tendências",
+    date: "05 Nov, 2023",
+    excerpt: "Descubra as principais tendências em persianas e cortinas que vão dominar a decoração em 2024.",
+    image: doubleVisionImg,
   },
   {
     id: 3,
-    title: "Como aumentar suas vendas com mostruários profissionais",
-    excerpt:
-      "Estratégias práticas para revendas apresentarem produtos de forma mais efetiva aos clientes.",
-    date: "05 Nov 2024",
-    category: "Revendas",
+    title: "Manutenção de persianas",
+    category: "Cuidados",
+    date: "28 Set, 2023",
+    excerpt: "Aprenda como manter suas persianas sempre limpas e funcionando perfeitamente com dicas simples e práticas.",
+    image: officeImg,
   },
 ];
 
 export default function BlogSection() {
-  return (
-    <section className="py-20 md:py-28 bg-muted/50 relative overflow-hidden">
-      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-primary/5 shape-blob pointer-events-none" />
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
+  return (
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 animate-slide-down">
-          <div>
-            <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
-              Blog
-            </p>
-            <div className="shape-accent-line mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-accent-font-lg">
-              Tendências, dicas e novidades
-            </h2>
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <p className="text-[#F68D2E] font-semibold text-sm uppercase tracking-wider mb-3">
+            NOSSO BLOG
+          </p>
+          <div className="flex justify-center mb-6">
+            <div className="shape-accent-line" />
           </div>
-          <Button variant="outline" className="self-start sm:self-auto">
-            Ver todos os posts
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            Tendências, dicas e novidades
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, idx) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-lg overflow-hidden group hover-elevate hover:scale-105 transition-transform animate-slide-up"
-              style={{ animationDelay: `${idx * 0.15}s` }}
-              data-testid={`blog-card-${post.id}`}
-            >
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded animate-pulse">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-muted-foreground flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {post.date}
-                  </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+          {blogPosts.map((post, index) => {
+            const marginTopClasses = [
+              "mt-0 sm:mt-0 lg:mt-0",
+              "mt-8 sm:mt-12 lg:mt-16",
+              "mt-0 sm:mt-0 lg:mt-0",
+            ];
+
+            return (
+              <div
+                key={post.id}
+                className={`relative group cursor-pointer ${marginTopClasses[index]}`}
+                onMouseEnter={() => setHoveredId(post.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm transition-all duration-500">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className={`w-full h-full object-cover transition-all duration-500 ${
+                      hoveredId === post.id ? "scale-110 brightness-50" : ""
+                    }`}
+                  />
+                  
+                  <div
+                    className={`absolute inset-0 bg-[#F68D2E] transition-all duration-500 ${
+                      hoveredId === post.id
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
+                  />
+                  
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <div
+                      className={`transition-all duration-500 ${
+                        hoveredId === post.id
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-4"
+                      }`}
+                    >
+                      <h3 className="text-white text-xl md:text-2xl font-bold mb-4">
+                        {post.title}
+                      </h3>
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-[200px] mb-6">
+                        {post.excerpt}
+                      </p>
+                      <Link href={`/blog/${post.id}`}>
+                        <span className="text-white text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:gap-3 transition-all">
+                          Ler artigo <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </Link>
+                    </div>
+                    
+                    <div
+                      className={`absolute bottom-0 left-0 right-0 p-4 md:p-6 transition-all duration-500 ${
+                        hoveredId === post.id
+                          ? "opacity-0 translate-y-4"
+                          : "opacity-100 translate-y-0"
+                      }`}
+                    >
+                      <p className="text-white/80 text-xs md:text-sm font-medium mb-1 uppercase tracking-wider">
+                        {post.category}
+                      </p>
+                      <p className="text-white/70 text-xs md:text-sm">
+                        {post.date}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  {post.excerpt}
-                </p>
               </div>
-            </article>
-          ))}
+            );
+          })}
+        </div>
+
+        <div className="flex justify-center">
+          <Link href="/blog">
+            <Button
+              variant="outline"
+              className="border-2 border-[#F68D2E] text-[#F68D2E] hover:bg-[#F68D2E]/5 rounded-full px-8 py-6 text-base font-semibold transition-all duration-300"
+            >
+              Ver todos os artigos
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
